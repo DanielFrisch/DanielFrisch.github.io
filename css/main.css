@@ -11,9 +11,11 @@
 
 body {
   background: #fff;
+  background: -moz-radial-gradient(center, ellipse cover, #ffffff 40%, #bbbbbb 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(40%, #ffffff), color-stop(100%, #bbbbbb));
   background: -webkit-radial-gradient(center, ellipse cover, #ffffff 40%, #bbbbbb 100%);
-  background: -webkit-radial-gradient(center, ellipse, #ffffff 40%, #bbbbbb 100%);
+  background: -o-radial-gradient(center, ellipse cover, #ffffff 40%, #bbbbbb 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #ffffff 40%, #bbbbbb 100%);
   background: radial-gradient(ellipse at center, #ffffff 40%, #bbbbbb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bbbbbb',GradientType=1 );
   font-family: "Ubuntu", sans-serif; }
@@ -40,7 +42,6 @@ header {
     border-top: 2px solid;
     border-bottom: 2px solid; }
   header nav {
-    background: -webkit-radial-gradient(center, ellipse, #2f4052 0%, #3f4c6b 100%);
     background: radial-gradient(ellipse at center, #2f4052 0%, #3f4c6b 100%);
     display: block;
     padding: 10px 15px; }
@@ -62,36 +63,29 @@ nav a::before,
 nav a::after {
   display: inline-block;
   opacity: 0;
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-          transition: transform 0.3s, opacity 0.2s; }
+  transition: transform 0.3s, opacity 0.2s; }
 
 nav a::before {
   margin-right: 10px;
   content: '[';
-  -webkit-transform: translateX(20px);
-      -ms-transform: translateX(20px);
-          transform: translateX(20px); }
+  transform: translateX(20px); }
 
 nav a::after {
   margin-left: 10px;
   content: ']';
-  -webkit-transform: translateX(-20px);
-      -ms-transform: translateX(-20px);
-          transform: translateX(-20px); }
+  transform: translateX(-20px); }
 
 nav a:hover::before,
 nav a:hover::after,
 nav a:focus::before,
 nav a:focus::after {
   opacity: 1;
-  -webkit-transform: translateX(0px);
-      -ms-transform: translateX(0px);
-          transform: translateX(0px); }
+  transform: translateX(0px); }
 
 .work .intro {
+  font-family: 'Dancing Script', cursive;
   margin: 100px 0 60px;
-  text-align: center;
-  text-transform: uppercase; }
+  text-align: center; }
   .work .intro a {
     color: #333; }
     .work .intro a:hover {
@@ -104,17 +98,20 @@ nav a:focus::after {
     .work .intro a h2 {
       font-size: 2em;
       margin: 0 0 20px; }
-.work ul {
-  -webkit-columns: 290px 2;
-     -moz-columns: 290px 2;
-          columns: 290px 2;
-  -webkit-column-gap: 2em;
-     -moz-column-gap: 2em;
-          column-gap: 2em;
+.work .sites {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-flow: row wrap;
   padding: 0; }
-  .work ul li {
+  .work .sites img {
+    width: 100%; }
+  .work .sites li {
     box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
-    margin-bottom: 2em; }
+    margin: 5px; }
+    @media screen and (min-width: 480px) {
+      .work .sites li {
+        max-width: 40%; } }
 
 .profile {
   text-align: center;
@@ -140,10 +137,8 @@ nav a:focus::after {
     background: #eee;
     height: 30px;
     border-radius: 3px;
-    -webkit-transition: 0.4s linear;
-            transition: 0.4s linear;
-    -webkit-transition-property: width, background-color;
-            transition-property: width, background-color; }
+    transition: 0.4s linear;
+    transition-property: width, background-color; }
   .skills .skillbar-title {
     position: absolute;
     top: 0;
@@ -209,8 +204,7 @@ nav a:focus::after {
   -webkit-transition: margin-top 300ms; }
 
 .contact:hover .envelope, .contact:focus .envelope {
-  -webkit-transition-delay: 150ms;
-          transition-delay: 150ms;
+  transition-delay: 150ms;
   -ms-transition-delay: 150ms;
   -moz-transition-delay: 150ms;
   -o-transition-delay: 150ms;
@@ -231,11 +225,15 @@ nav a:focus::after {
   -webkit-transform-origin: top;
   transition: transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
   -ms-transition: -ms-transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
+  -moz-transition: -moz-transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
+  -o-transition: -o-transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
   -webkit-transition: -webkit-transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms; }
 
 .contact:hover .envelope .top, .contact:focus .envelope .top {
   transition: transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
   -ms-transition: -ms-transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
+  -moz-transition: -moz-transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
+  -o-transition: -o-transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
   -webkit-transition: -webkit-transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
   height: 10px;
   top: -60px;
@@ -400,5 +398,3 @@ footer {
 
 .copy > p {
   margin-bottom: 0; }
-
-/*# sourceMappingURL=main.css.map */
