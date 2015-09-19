@@ -1,0 +1,30 @@
+# Site settings
+title: Daniel Frisch
+email: dustyfrisch3@gmail.com
+url: https://danielfrisch.github.io
+description: "Daniel Frisch's web devoloper portfolio"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary-dark: '#000000'
+  links: '#219ab3'
+
+# Footer settings
+footer: Daniel Frisch
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: https://twitter.com/dustyfrisch
+  - title: facebook
+    url: https://www.facebook.com/daniel.frisch.5
+  - title: google-plus
+    url: https://plus.google.com/118148771041412566312/about
+  - title: codepen
+    url: https://codepen.io/DanielFrisch/
+  - title: github
+    url: https://github.com/DanielFrisch
+
+# Build settings
+markdown: kramdown
+permalink: pretty
